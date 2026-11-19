@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+coverage/
+*.log
+*.wav
+*dataset.json
+*model.json
+*report.json
