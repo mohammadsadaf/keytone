@@ -1,0 +1,13 @@
+{
+  "name": "keytone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local acoustic keyboard learning lab. No dependencies, accounts, or uploads.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "test": "node --test tests/*.test.js"
+  }
+}
