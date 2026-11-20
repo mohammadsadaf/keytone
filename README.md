@@ -6,6 +6,22 @@ A complete, local acoustic keyboard learning lab. Record your own labeled keystr
 
 **No install step, API key, account, Python environment, or cloud service is required.** The app has no third-party runtime dependencies. Its Node server only serves static assets; audio and machine learning run in your browser.
 
+## Tech stack
+
+| Layer | Technology | Purpose |
+| --- | --- | --- |
+| Frontend | HTML5, CSS3, vanilla JavaScript (ES modules) | Responsive interface with a blue theme |
+| Audio | Web Audio API and AudioWorklet | Microphone capture, audio decoding, and PCM processing |
+| Signal processing | Custom JavaScript FFT and mel filter bank | Onset detection, clip alignment, and mel spectrogram features |
+| Machine learning | Custom JavaScript neural network and Web Workers | Train a 512 → 32 ReLU → softmax classifier with Adam in the background |
+| Visualizations | Canvas 2D API | Waveforms, spectrograms, and training curves |
+| Local storage | IndexedDB | Save each visitor's recordings, sessions, models, and reports in their browser |
+| Development | Node.js 20+ and npm scripts | Serve the app locally without installing dependencies |
+| Testing | Node.js built-in test runner and assert module | Verify audio processing, training, data splits, and import/export validation |
+| Version control and hosting | Git, GitHub, and GitHub Pages | Manage source code and publish the static HTTPS app |
+
+The published app runs entirely in the browser. It uses no frontend framework, external machine-learning library, Python runtime, or backend API.
+
 ## Publish on GitHub Pages
 
 This app can run entirely as a static HTTPS site. Upload the repository with its `src/` and `tests/` folders intact, then choose **Settings → Pages → Deploy from a branch → main → / (root)**. The included `.nojekyll` file serves the application directly. Module, stylesheet, training-worker, and audio-worklet URLs work under a repository subdirectory as well as at a domain root.
